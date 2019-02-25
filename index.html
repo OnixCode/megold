@@ -3,11 +3,35 @@
     <head>
         <title>ME Gold</title>
         <meta name="viewport" content="device=device-width, initial-scale=1.0">
+        <style>
+        .grid-container {
+            display: grid;
+            /*The number of autos define the number of columns*/
+            grid-template-columns: auto auto auto; 
+            background-color: #2196F3;
+            padding: 10px;
+        } 
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grid-wide {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            grid-column: 1/4;
+        }
+        </style>
     </head>
 
     <body>
         <div class="grid-container">
-            <div class="grid-item">1</div>
+            <div class="grid-wide">1</div>
             <div class="grid-item">2</div>
             <div class="grid-item">3</div>  
             <div class="grid-item">4</div>
@@ -15,8 +39,13 @@
             <div class="grid-item">6</div>  
             <div class="grid-item">7</div>
             <div class="grid-item">8</div>
-            <div class="grid-item">9</div>  
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div> 
+            <div class="grid-wide">11</div>   
           </div>
     </body>
+    <script>
+        var megold = ["Up", "Up", "Down", "Down", "Left"]
+    </script>
 
 </html>
