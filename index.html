@@ -12,13 +12,23 @@
             background-size: 100% 100%;
             background-position: center;
             padding: 10px;
+            z-index: -2;
         } 
+        .grid-back {
+            background-image: url('CoinBack.svg');
+            background-size: cover;
+            background-position: center;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            display: flex; 
+        }
         .grid-item {
             background-image: url('Cartooncoin.svg');
             background-size: cover;
             background-position: center;
-            font-size: 30px;
-            text-align: center;
+            border: 1px solid black;
+            z-index: -1;
         }
         .grid-wide {
             background-color: rgba(10, 85, 184, 0.8);
@@ -35,7 +45,10 @@
     <body >
         <div background-image="background.png" class="grid-container">
             <div class="grid-wide">MeGold</div>
-            <div id="grid0" class="grid-item"></div>
+            <div id="grid0" class="grid-item" onclick="play(0)">
+                <img id="back0" class="grid-back">
+            </div>
+                
             <div id="grid1" class="grid-item"></div>  
             <div id="grid2" class="grid-item"></div>
             <div id="grid3" class="grid-item"></div>
@@ -74,7 +87,6 @@
             <div class="grid-wide">Player</div>   
           </div>
           <button onclick="restartgame()">New Game</button>
-          <p id="testarray"></p>  
     </body>
     <script>
         var width = document.getElementById('grid0').offsetWidth;
@@ -84,14 +96,13 @@
             "Left", "Left", "Left", "Left", "Left", 
             "Right", "Right", "Right", "Right", "Right",
             "Map", "Key", "Treasure", "North Star", "Escape", 
-            "Wild", "Wild", "Wild", "Wild",
+            "Wild", "Wild", "Wild", "Wild", "Wild",
             "Trap", "Trap", "Trap", "Trap",
             "Protect", "Protect"];
         var assigned = [];
 
         function setWidth() {
             for (i=1; i<megold.length; i++) {
-                console.log(width);
                 document.getElementById("grid"+i).style.height = `${width}px`;
             }
         }
@@ -102,11 +113,22 @@
         }
 
         function populate() {
-            for( i=0; i<36; i++){
+            for(i=0; i<1; i++){
                 assigned[i] = megold[i];
-                document.getElementById("grid"+i).innerHTML = megold[i];
+                document.getElementById("grid0").innerHTML = megold[i];
+                document.getElementById("back0").style.display = "none";
             }
-        } 
+        }
+
+        function play(i) {
+            var x = document.getElementById("back0");
+            console.log(x);
+            if (x.style.display === "none"){
+                x.style.display = "block";
+            }else {x.style.display = "none";
+            }
+        }
+        
         setWidth();   
     </script>
 </html>
