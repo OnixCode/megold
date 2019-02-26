@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -8,15 +6,11 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="svg69"
-   width="900"
-   height="780"
    viewBox="0 0 900 780"
-   sodipodi:docname="CoinBack.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   height="780"
+   width="900"
+   id="svg69"
+   version="1.1">
   <metadata
      id="metadata75">
     <rdf:RDF>
@@ -32,67 +26,46 @@
   <defs
      id="defs73">
     <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter888"
-       x="-0.0081925193"
-       width="1.016385"
+       height="1.0162066"
        y="-0.008103309"
-       height="1.0162066">
+       width="1.016385"
+       x="-0.0081925193"
+       id="filter888"
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="2.1"
-         id="feGaussianBlur890" />
+         id="feGaussianBlur890"
+         stdDeviation="2.1" />
     </filter>
     <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter892"
-       x="-0.0056"
-       width="1.0112"
+       height="1.0129231"
        y="-0.0064615385"
-       height="1.0129231">
+       width="1.0112"
+       x="-0.0056"
+       id="filter892"
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="2.1"
-         id="feGaussianBlur894" />
+         id="feGaussianBlur894"
+         stdDeviation="2.1" />
     </filter>
     <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath896">
+       id="clipPath896"
+       clipPathUnits="userSpaceOnUse">
       <ellipse
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:1.30788982;filter:url(#filter888)"
-         id="ellipse898"
-         cx="449.82635"
-         cy="382.09839"
+         ry="310.98407"
          rx="307.59769"
-         ry="310.98407" />
+         cy="382.09839"
+         cx="449.82635"
+         id="ellipse898"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:1.30788982;filter:url(#filter888)" />
     </clipPath>
   </defs>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1299"
-     inkscape:window-height="713"
-     id="namedview71"
-     showgrid="false"
-     inkscape:zoom="0.88589744"
-     inkscape:cx="450"
-     inkscape:cy="525.45586"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg69" />
   <image
-     width="900"
-     height="780"
-     preserveAspectRatio="none"
+     transform="translate(-2.2575977,-12.416787)"
+     clip-path="url(#clipPath896)"
+     style="opacity:1;fill:#ffffff;filter:url(#filter892)"
+     y="0"
+     x="0"
+     id="image77"
      xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hAytodHRwOi8v
 bnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2Vo
 aUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6
@@ -1371,10 +1344,7 @@ AAAo+q+oB9V9QNbYmoAsTUAprv8AK8rfr3f4AUfVfUA+q+oGtsTUAWJqAU13+V5W/Xu/wAo+q+oB
 xNQCmu/yvK3693+AFH1X1APqvqBrbE1AFiagFNd/leVv17v8AKPqvqAfVfUDW2JqALE1AKa7/K8r
 fr3f4AUfVfUA+q+oGtsTUAWJqAU13+V5W/Xu/wAAKPqvqAfVfUDW2JqALE1AFiagP//Z
 "
-     id="image77"
-     x="0"
-     y="0"
-     style="opacity:1;fill:#ffffff;filter:url(#filter892)"
-     clip-path="url(#clipPath896)"
-     transform="translate(-2.2575977,-12.416787)" />
+     preserveAspectRatio="none"
+     height="780"
+     width="900" />
 </svg>
