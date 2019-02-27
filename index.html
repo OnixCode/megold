@@ -141,10 +141,19 @@
             "Trap", "Trap", "Trap", "Trap",
             "Protect", "Protect"];
         //Container array for randomized values
-        
-        var clickable = 0;
-        var twoD = [6][6];
+        /*var twoD = new Array(6);
 
+for (var i = 0; i < twoD.length; i++) {
+  twoD[i] = new Array(6);
+}
+
+console.log(twoD);*/
+        var twoD = [[0,0,0,0,0,0],
+                    [1,1,1,1,1,1],
+                    [2,2,2,2,2,2],
+                    [3,3,3,3,3,3],
+                    [4,4,4,4,4,4],
+                    [5,5,5,5,5,5],];
         //Looks at the first grid size and matches size with other grids
         function setWidth() {
             //for (i=0; i<megold.length; i++)
@@ -161,21 +170,20 @@
         }
         //Create container to track randomized array
         function populate() {
-            //for (i=0; i<megold.length; i++){
+                megoldcopy = megold.slice(0); 
             for (x=0; x<6; x++){
-                for (y=0; y<6; y++){console.log(megold[0]);
-                    twoD[x][y] = megold.splice();
+                for (y=0; y<6; y++){
+                    twoD[x][y] = megoldcopy.splice(0,1);
                 document.getElementById("grid"+ x + y).innerHTML = twoD[x][y];
-                console.log(twoD);
                 }
             }
         }
         
-
-
-        function left(i) {
-            if(assigned[i]="Left"){
-                flip
+        function left(x,y) {
+            console.log(twoD[x][y].toString()); 
+            if (twoD[x][y]=="Left"){
+                
+                flip(x, y);
             }
 
         }
@@ -188,7 +196,8 @@
             /*if (x.style.disflip === "none"){
                 x.style.disflip = "block";
             }else {x.style.disflip = "none";
-            }*/
+            }*/console.log(x,y);
+            //left(x,y);
         }
 
         //Reset the board
