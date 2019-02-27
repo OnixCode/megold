@@ -2,7 +2,7 @@
 <html lang="US-en">
     <head>
         <title>ME Gold</title>
-        <meta name="viewport" content="device=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
         .grid-container {
             display: grid;
@@ -22,14 +22,17 @@
             justify-content: center;
             align-items: center;
             display: flex; 
-            text-decoration: normal; 
         }
         .grid-item {
             background-image: url('Cartooncoin.svg');
             background-size: cover;
             background-position: center;
-            border: 1px solid black; 
-            text-decoration: none;
+            /*border: 1px solid black; */
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: transparent;
         }
         .grid-wide {
             background-color: rgba(10, 85, 184, 0.8);
@@ -42,131 +45,175 @@
         </style>
         <a href="https://pngtree.com/">Graphics from pngtree.com</a>
     </head>
-
+    
     <body >
+        <button onclick="resetBoard()">New Turn</button>
+        <button onclick="resetClick()">Reset Click</button>
+        <button onclick="restartGame()">New Game</button>
         <div background-image="background.png" class="grid-container">
             <div class="grid-wide">MeGold</div>
-            <div id="grid0" class="grid-item" onclick="play(0)">
+            <div id="grid00" class="grid-item" onclick="flip(0,0)">
                 </div>
-            <div id="grid1" class="grid-item" onclick="play(1)">
+            <div id="grid01" class="grid-item" onclick="flip(0,1)">
                 </div>
-            <div id="grid2" class="grid-item" onclick="play(2)">
+            <div id="grid02" class="grid-item" onclick="flip(0,2)">
                 </div>
-            <div id="grid3" class="grid-item" onclick="play(3)">
+            <div id="grid03" class="grid-item" onclick="flip(0,3)">
                 </div>
-            <div id="grid4" class="grid-item" onclick="play(4)">
+            <div id="grid04" class="grid-item" onclick="flip(0,4)">
                 </div>
-            <div id="grid5" class="grid-item" onclick="play(5)">
+            <div id="grid05" class="grid-item" onclick="flip(0,5)">
                 </div>
-            <div id="grid6" class="grid-item" onclick="play(6)">
+            <div id="grid10" class="grid-item" onclick="flip(1,0)">
                 </div>
-            <div id="grid7" class="grid-item" onclick="play(7)">
+            <div id="grid11" class="grid-item" onclick="flip(1,1)">
                 </div>
-            <div id="grid8" class="grid-item" onclick="play(8)">
+            <div id="grid12" class="grid-item" onclick="flip(1,2)">
                 </div>
-            <div id="grid9" class="grid-item" onclick="play(9)">
+            <div id="grid13" class="grid-item" onclick="flip(1,3)">
                 </div>
-            <div id="grid10" class="grid-item" onclick="play(10)">
+            <div id="grid14" class="grid-item" onclick="flip(1,4)">
                 </div>
-            <div id="grid11" class="grid-item" onclick="play(11)">
+            <div id="grid15" class="grid-item" onclick="flip(1,5)">
                 </div>
-            <div id="grid12" class="grid-item" onclick="play(12)">
+            <div id="grid20" class="grid-item" onclick="flip(2,0)">
                 </div>
-            <div id="grid13" class="grid-item" onclick="play(13)">
+            <div id="grid21" class="grid-item" onclick="flip(2,1)">
                 </div>
-            <div id="grid14" class="grid-item" onclick="play(14)">
+            <div id="grid22" class="grid-item" onclick="flip(2,2)">
                 </div>
-            <div id="grid15" class="grid-item" onclick="play(15)">
+            <div id="grid23" class="grid-item" onclick="flip(2,3)">
                 </div>
-            <div id="grid16" class="grid-item" onclick="play(16)">
+            <div id="grid24" class="grid-item" onclick="flip(2,4)">
                 </div>
-            <div id="grid17" class="grid-item" onclick="play(17)">
+            <div id="grid25" class="grid-item" onclick="flip(2,5)">
                 </div>
-            <div id="grid18" class="grid-item" onclick="play(18)">
+            <div id="grid30" class="grid-item" onclick="flip(3,0)">
                 </div>
-            <div id="grid19" class="grid-item" onclick="play(19)">
+            <div id="grid31" class="grid-item" onclick="flip(3,1)">
                 </div>
-            <div id="grid20" class="grid-item" onclick="play(20)">
+            <div id="grid32" class="grid-item" onclick="flip(3,2)">
                 </div>
-            <div id="grid21" class="grid-item" onclick="play(21)">
+            <div id="grid33" class="grid-item" onclick="flip(3,3)">
                 </div>
-            <div id="grid22" class="grid-item" onclick="play(22)">
+            <div id="grid34" class="grid-item" onclick="flip(3,4)">
                 </div>
-            <div id="grid23" class="grid-item" onclick="play(23)">
+            <div id="grid35" class="grid-item" onclick="flip(3,5)">
                 </div>
-            <div id="grid24" class="grid-item" onclick="play(24)">
+            <div id="grid40" class="grid-item" onclick="flip(4,0)">
                 </div>
-            <div id="grid25" class="grid-item" onclick="play(25)">
+            <div id="grid41" class="grid-item" onclick="flip(4,1)">
                 </div>
-            <div id="grid26" class="grid-item" onclick="play(26)">
+            <div id="grid42" class="grid-item" onclick="flip(4,2)">
                 </div>
-            <div id="grid27" class="grid-item" onclick="play(27)">
+            <div id="grid43" class="grid-item" onclick="flip(4,3)">
                 </div>
-            <div id="grid28" class="grid-item" onclick="play(28)">
+            <div id="grid44" class="grid-item" onclick="flip(4,4)">
                 </div>
-            <div id="grid29" class="grid-item" onclick="play(29)">
+            <div id="grid45" class="grid-item" onclick="flip(4,5)">
                 </div>
-            <div id="grid30" class="grid-item" onclick="play(30)">
+            <div id="grid50" class="grid-item" onclick="flip(5,0)">
                 </div>
-            <div id="grid31" class="grid-item" onclick="play(31)">
+            <div id="grid51" class="grid-item" onclick="flip(5,1)">
                 </div>
-            <div id="grid32" class="grid-item" onclick="play(32)">
+            <div id="grid52" class="grid-item" onclick="flip(5,2)">
                 </div>
-            <div id="grid33" class="grid-item" onclick="play(33)">
+            <div id="grid53" class="grid-item" onclick="flip(5,3)">
                 </div>
-            <div id="grid34" class="grid-item" onclick="play(34)">
+            <div id="grid54" class="grid-item" onclick="flip(5,4)">
                 </div>
-            <div id="grid35" class="grid-item" onclick="play(35)">
+            <div id="grid55" class="grid-item" onclick="flip(5,5)">
                 </div>
             <div class="grid-wide">Player</div>   
           </div>
-          <button onclick="restartgame()">New Game</button>
     </body>
 
     <script>
-        var width = document.getElementById('grid0').offsetWidth;
+        var width = document.getElementById('grid00').offsetWidth;
+        //Original array values
         var megold = [
             "Up", "Up", "Up", "Up", "Up",
             "Down", "Down", "Down", "Down", "Down",
             "Left", "Left", "Left", "Left", "Left", 
             "Right", "Right", "Right", "Right", "Right",
-            "Map", "Key", "Treasure", "North Star", "Escape", 
+            "Map", "Key", "Treasure", "NorthStar", "Escape", 
             "Wild", "Wild", "Wild", "Wild", "Wild",
             "Trap", "Trap", "Trap", "Trap",
             "Protect", "Protect"];
-        var assigned = [];
+        //Container array for randomized values
+        
+        var clickable = 0;
+        var twoD = [6][6];
 
+        //Looks at the first grid size and matches size with other grids
         function setWidth() {
-            for (i=0; i<megold.length; i++) {
-                document.getElementById("grid"+i).style.height = `${width}px`;
-                console.log(width);
+            //for (i=0; i<megold.length; i++)
+            for (x=0; x<6; x++){
+                for (y=0; y<6; y++){
+                document.getElementById("grid"+ x + y).style.height = `${width}px`;
+                }
             }
         }
-
-        function restartgame() {
+        //Randomizes the order of array values
+        function restartGame() {
             megold.sort(function(a,b){return 0.5 - Math.random()});
             populate();
         }
-
+        //Create container to track randomized array
         function populate() {
-            for(i=0; i<megold.length; i++){
-                console.log(megold[i]);
-                assigned[i] = megold[i];
-                document.getElementById("grid"+i).innerHTML = megold[i];
+            //for (i=0; i<megold.length; i++){
+            for (x=0; x<6; x++){
+                for (y=0; y<6; y++){console.log(megold[0]);
+                    twoD[x][y] = megold.splice();
+                document.getElementById("grid"+ x + y).innerHTML = twoD[x][y];
+                console.log(twoD);
+                }
+            }
+        }
+        
+
+
+        function left(i) {
+            if(assigned[i]="Left"){
+                flip
+            }
+
+        }
+
+        //Change the class of the grid to disflip the back instead of front
+        function flip(x,y) {
+            var x = document.getElementById("grid"+ x + y);
+            x.classList.remove('grid-item');
+            x.classList.add('grid-back');
+            /*if (x.style.disflip === "none"){
+                x.style.disflip = "block";
+            }else {x.style.disflip = "none";
+            }*/
+        }
+
+        //Reset the board
+        function resetBoard() {
+            var x = document.querySelectorAll('.grid-back');
+            for (i=0; i< x.length; i++){
+                x[i].classList.remove('grid-back')
+                x[i].classList.add('grid-item')
             }
         }
 
-        function play(i) {
-            var x = document.getElementById("grid"+i);
-            console.log(x);
-            x.classList.remove('grid-item');
-            x.classList.add('grid-back');
-            /*if (x.style.display === "none"){
-                x.style.display = "block";
-            }else {x.style.display = "none";
-            }*/
+        function noClick(){
+            var stop = document.getElementsByTagName('div');
+            for (i=0; i < stop.length; i++){
+            }
         }
-        
+
+        function resetClick(){
+            var start = document.getElementsByTagName('div');
+            for (i=0; i < start.length; i++){
+            start[i].onclick = "flip(i)";
+            }
+            
+        }
+
         setWidth();   
     </script>
 </html>

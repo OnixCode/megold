@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+            var megold = [
+                        "Up", "Up", "Up", "Up", "Up",
+                        "Down", "Down", "Down", "Down", "Down",
+                        "Left", "Left", "Left", "Left", "Left", 
+                        "Right", "Right", "Right", "Right", "Right",
+                        "Map", "Key", "Treasure", "NorthStar", "Escape", 
+                        "Wild", "Wild", "Wild", "Wild", "Wild",
+                        "Trap", "Trap", "Trap", "Trap",
+                        "Protect", "Protect"];
+
+    var twoD = [6][6];
+        for (x=0; x<6; x++)
+            for (y=0; y<6; y++)
+            twoD[x][y] = megold[x*y];
+    /*for (var i = 0 ; i < 6; i++) {
+        megold[i] = [];
+        for (var j = 0; j < 6; j++) {
+        megold[i][j] = [];
+        }
+    }*/
+   
+    console.log(megold);
+
+
+        //Container array for randomized values
+        var assigned = [];
+//Randomizes the order of array values
+function restartGame() {
+            megold.sort(function(a,b){return 0.5 - Math.random()});
+            populate();
+        }
+        //Create container to track randomized array
+        function populate() {
+            for(i=0; i<megold.length; i++){
+                assigned[i] = megold[i];
+                document.getElementById("grid"+i).innerHTML = assigned[i];
+            }
+        }
+
+</script>
+
+
+
+</html> 
