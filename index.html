@@ -18,7 +18,7 @@
             background-image: url('CoinBack.svg');
             background-size: cover;
             background-position: center;
-            font-size: 30px;
+            font-size: 20px;
             justify-content: center;
             align-items: center;
             display: flex; 
@@ -28,7 +28,7 @@
             background-size: cover;
             background-position: center;
             /*border: 1px solid black; */
-            font-size: 30px;
+            font-size: 20px;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -38,7 +38,7 @@
             background-color: rgba(10, 85, 184, 0.8);
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
-            font-size: 30px;
+            font-size: 20px;
             text-align: center;
             grid-column: 1/7;
         }
@@ -140,64 +140,74 @@
             "Wild", "Wild", "Wild", "Wild", "Wild",
             "Trap", "Trap", "Trap", "Trap",
             "Protect", "Protect"];
-        //Container array for randomized values
-        /*var twoD = new Array(6);
-
-for (var i = 0; i < twoD.length; i++) {
-  twoD[i] = new Array(6);
-}
-
-console.log(twoD);*/
+        //2D array
         var twoD = [[0,0,0,0,0,0],
                     [1,1,1,1,1,1],
                     [2,2,2,2,2,2],
                     [3,3,3,3,3,3],
                     [4,4,4,4,4,4],
                     [5,5,5,5,5,5],];
-        //Looks at the first grid size and matches size with other grids
+        //Looks at the first grid size to match with other grid for gameboard size.
         function setWidth() {
-            //for (i=0; i<megold.length; i++)
             for (x=0; x<6; x++){
                 for (y=0; y<6; y++){
                 document.getElementById("grid"+ x + y).style.height = `${width}px`;
                 }
             }
         }
-        //Randomizes the order of array values
+        //Randomizes the order of the array values.
         function restartGame() {
             megold.sort(function(a,b){return 0.5 - Math.random()});
             populate();
         }
-        //Create container to track randomized array
+        //Set the 2D with randomized game values.
         function populate() {
-                megoldcopy = megold.slice(0); 
+            //Sets random megold array to megoldcopy because the slice empties
+            //the array, producing an empty array after pressing new game multiple times.
+            megoldcopy = megold.slice(0); 
             for (x=0; x<6; x++){
                 for (y=0; y<6; y++){
                     twoD[x][y] = megoldcopy.splice(0,1);
-                document.getElementById("grid"+ x + y).innerHTML = twoD[x][y];
+            document.getElementById("grid"+ x + y).innerHTML = twoD[x][y];
                 }
             }
         }
-        
-        function left(x,y) {
-            console.log(twoD[x][y].toString()); 
+  
+        //Change the grid class to display the back instead of front
+        function flip(x,y) {console.log(twoD[x][y]);
+            
             if (twoD[x][y]=="Left"){
-                
-                flip(x, y);
-            }
-
-        }
-
-        //Change the class of the grid to disflip the back instead of front
-        function flip(x,y) {
-            var x = document.getElementById("grid"+ x + y);
-            x.classList.remove('grid-item');
-            x.classList.add('grid-back');
-            /*if (x.style.disflip === "none"){
-                x.style.disflip = "block";
-            }else {x.style.disflip = "none";
-            }*/console.log(x,y);
-            //left(x,y);
+                //Anonymous function ()=> breaks scope and lets you access anything 
+                //within current scope
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                if(y==0){y=5;
+                }else{y=y-1;
+                }
+                setTimeout(()=>{flip(x, y)}, 1000);    
+            }else if (twoD[x][y]=="Right"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                if(y==5){y=0;
+                }else{y=y+1
+                }setTimeout(()=>{flip(x, y)}, 1000);
+            }else if (twoD[x][y]=="Up"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                if(x==0){x=5;
+                }else(x=x-1)
+                setTimeout(()=>{flip(x, y)}, 1000);
+            }else if (twoD[x][y]=="Down"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                if (x==5){x=5;
+                }else(x=x+1)
+                setTimeout(()=>{flip(x, y)}, 1000);
+            }else{setTimeout(()=>{resetBoard()}, 2000);}
         }
 
         //Reset the board
