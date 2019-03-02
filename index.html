@@ -11,8 +11,7 @@
             background-image: url('Background.svg');
             background-size: 100% 100%;
             background-position: center;
-            padding: 10px;
-            
+            padding: 10px;   
         } 
         .grid-back {
             background-image: url('CoinBack.svg');
@@ -207,6 +206,46 @@
                 if (x==5){x=5;
                 }else(x=x+1)
                 setTimeout(()=>{flip(x, y)}, 1000);
+            }else if (twoD[x][y]=="Wild"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Trap"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Protect"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Map"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Key"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Treasure"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="NorthStar"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
+            }else if (twoD[x][y]=="Escape"){
+                var f = document.getElementById("grid"+ x + y);
+                    f.classList.remove('grid-item');
+                    f.classList.add('grid-back');
+                    setTimeout(()=>{resetBoard()}, 2000);
             }else{setTimeout(()=>{resetBoard()}, 2000);}
         }
 
