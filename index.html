@@ -171,8 +171,11 @@
                 }
             }
         }
-  
+
         //Change the grid class to display the back instead of front
+        /*To address the loop issue create a global var to track pieces that are flipped
+        and then set to true, if you move to a wild piece, reset the counters, if you 
+        reach a true piece, end the turn.*/
         function flip(x,y) {console.log(twoD[x][y]);
             
             if (twoD[x][y]=="Left"){
@@ -183,7 +186,7 @@
                     f.classList.add('grid-back');
                 if(y==0){y=5;
                 }else{y=y-1;
-                }
+                    }
                 setTimeout(()=>{flip(x, y)}, 1000);    
             }else if (twoD[x][y]=="Right"){
                 var f = document.getElementById("grid"+ x + y);
